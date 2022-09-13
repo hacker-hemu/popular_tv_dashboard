@@ -15,6 +15,10 @@
 
     <!-- fontawesome link  -->
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
+
+    <!-- jQuery link  -->
+    <script src="{{ asset('assets/js/jQuery.js') }}"></script>
+
 </head>
     <body>
 
