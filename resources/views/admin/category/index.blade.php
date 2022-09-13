@@ -25,7 +25,7 @@
                     <div class="row">
                         <!-- loop start for getting data -->
                         @foreach($category as $item)
-                            <div class="col-xl-3 col-md-6 mt-3">
+                            <div class="col-xl-3 col-md-6 mt-3 {{$item->status == 1 ? '' : 'opacity-75'}}">
                                 <div class="card bg-dark text-white border-0 shadow">
                                     <div class="card-body"
                                          style="background-image: url('{{ asset('uploads/category/' .$item->image) }}'); background-size: cover; height: 120px"></div>
@@ -42,8 +42,11 @@
 
                                         {{-- edite and delete button icon --}}
                                         <div class="row d-flex text-white">
-                                            <a href="" class="col-2 text-white"><i class="fa-solid fa-pen"></i></a>
-                                            <a href="" class="col-2 text-white"><i class="fa-solid fa-trash"></i></a>
+                                            {{-- edit button --}}
+                                            <a href="{{url('admin/edit-category/'.$item->id)}}" class="col-2 text-white"><i class="fa-solid fa-pen"></i></a>
+
+                                            {{-- Delete button --}}
+                                            <a href="{{url('admin/delete-category/'.$item->id)}}" class="col-2 text-white"><i class="fa-solid fa-trash"></i></a>
                                             <div
                                                 class="form-check form-switch mb-3 d-flex justify-content-end mx-auto col-8">
                                                 <input class="form-check-input " type="checkbox"
@@ -51,7 +54,8 @@
                                                        {{$item->status == 1 ? 'checked' : ''}} disabled>
                                             </div>
                                             <span class="text-white text-truncate  col-12"
-                                                  style="font-size: 12px; max-width: 100%;" title="{{ $item->description }}">{{ $item->description }}</span>
+                                                  style="font-size: 12px; max-width: 100%;"
+                                                  title="{{ $item->description }}">{{ $item->description }}</span>
 
 
                                         </div>

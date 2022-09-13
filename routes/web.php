@@ -26,4 +26,13 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 //     store category route
      Route::post('/add-category', [App\Http\Controllers\Admin\CategoryController::class, 'store']);
 
+//     edit category route
+     Route::get('/edit-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'edit']);
+
+//     edit category route
+     Route::put('/update-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'update']);
+
+//     delete category route
+     Route::get('/delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
+
  });

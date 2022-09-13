@@ -39,11 +39,11 @@
                     </div>
                     <div class="mb-3">
                         <label for="status">Status</label>
-                        <input type="checkbox" name="status" class="" id="status" value="1">
+                        <input type="checkbox" name="status" class="form-check-input bg-dark" id="status" value="1">
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-dark mx-auto col-12 col-md-3 mb-3">Save Category</button>
-                         <button class="btn btn-secondary mx-auto  col-12 col-md-3 mb-3">Cancel</button>
+                        <button class="btn btn-dark mx-auto col-12 col-md-3 mb-3">Add Category</button>
+                        <input type="reset" class="btn btn-secondary mx-auto  col-12 col-md-3 mb-3" value="Reset">
 
                     </div>
                 </form>
