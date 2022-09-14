@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 {{-- add title --}}
-@section('title', 'Popular Tv || Category')
+@section('title', 'Popular Tv || Edit Category')
 
 @section('content')
 
@@ -47,7 +47,7 @@
                     </div>
                     <div class="mb-3">
                         <label for="status">Status</label>
-                        <input class="form-check-input bg-dark" type="checkbox" id="flexSwitchCheckDefault"
+                        <input class="form-check-input bg-dark" name="status" value="1" type="checkbox" id="flexSwitchCheckDefault"
                                {{$category->status == 1 ? 'checked' : ''}}>
                     </div>
                     <div class="mb-3">

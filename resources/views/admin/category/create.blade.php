@@ -1,7 +1,7 @@
 @extends('layouts.master')
 
 {{-- add title --}}
-@section('title', 'Popular Tv || Category')
+@section('title', 'Popular Tv || Add Category')
 
 @section('content')
 
@@ -21,6 +21,8 @@
                         @endforeach
                     </div>
                 @endif
+
+                {{-- ============== category add form Start ============= --}}
 
                 <form action="{{ url('admin/add-category') }}" method="POST" enctype="multipart/form-data">
                     @csrf
@@ -42,11 +44,14 @@
                         <input type="checkbox" name="status" class="form-check-input bg-dark" id="status" value="1">
                     </div>
                     <div class="mb-3">
-                        <button class="btn btn-dark mx-auto col-12 col-md-3 mb-3">Add Category</button>
+                        <button type="submit" class="btn btn-dark mx-auto col-12 col-md-3 mb-3">Add Category</button>
                         <input type="reset" class="btn btn-secondary mx-auto  col-12 col-md-3 mb-3" value="Reset">
 
                     </div>
                 </form>
+
+                {{-- ============== category add form End ============= --}}
+
             </div>
         </div>
     </div>
