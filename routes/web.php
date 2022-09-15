@@ -38,7 +38,7 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
     Route::get('/delete-category/{category_id}', [App\Http\Controllers\Admin\CategoryController::class, 'destroy']);
 
 
-//     category route end  //////////////////
+//     category route end  //////////////////-----
 
 
 //     channels route start  //////////////////
@@ -53,7 +53,16 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 //    store channel route
     Route::post('/add-channel', [App\Http\Controllers\Admin\ChannelController::class, 'store']);
 
+//     edit channel route
+    Route::get('/edit-channel/{channel_id}', [App\Http\Controllers\Admin\ChannelController::class, 'edit']);
 
-//     channels route end  //////////////////
+//     update channel route
+    Route::put('/update-channel/{channel_id}', [App\Http\Controllers\Admin\ChannelController::class, 'update']);
+
+//     delete channel route
+    Route::get('/delete-channel/{channel_id}', [App\Http\Controllers\Admin\ChannelController::class, 'destroy']);
+
+
+//     channels route end  //////////////////--------
 
 });

@@ -16,11 +16,11 @@ class CreateChannelsTable extends Migration
         Schema::create('channels', function (Blueprint $table) {
             $table->id();
             $table->integer('category_id');
-            $table->string('name');
-            $table->string('title')->nullable();
+            $table->string('name', 64);
+            $table->string('title', 1023)->nullable();
             $table->tinyInteger('status')->default('1'); /*    1=true    */
-            $table->string('image');
-            $table->string('video_link');
+            $table->string('image', 1023);
+            $table->string('video_link', 1023);
             $table->tinyInteger('video_link_type')->default('1'); /*    1=normal link    */
             $table->boolean('is_favorite')->default('0'); /*    0=no favorite && 1=favorite    */
             $table->boolean('is_popular')->default('0'); /*    0=no favorite && 1=favorite    */

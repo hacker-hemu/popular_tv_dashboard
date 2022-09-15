@@ -22,6 +22,7 @@
                     </div>
                 @endif
 
+                {{-- form start  --}}
                 <form action="{{ url('admin/update-category/' .$category->id) }}" method="POST"
                       enctype="multipart/form-data">
                     @csrf
@@ -47,8 +48,9 @@
                     </div>
                     <div class="mb-3">
                         <label for="status">Status</label>
-                        <input class="form-check-input bg-dark" name="status" value="1" type="checkbox" id="flexSwitchCheckDefault"
-                               {{$category->status == 1 ? 'checked' : ''}}>
+                        <input class="form-check-input bg-dark" name="status" value="1" type="checkbox"
+                               id="flexSwitchCheckDefault"
+                            {{$category->status == 1 ? 'checked' : ''}}>
                     </div>
                     <div class="mb-3">
                         <button class="btn btn-dark mx-auto col-12 col-md-3 mb-3">Update Category</button>
@@ -56,6 +58,8 @@
 
                     </div>
                 </form>
+                {{-- form end  --}}
+
             </div>
         </div>
     </div>

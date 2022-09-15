@@ -84,7 +84,6 @@
                                    checked>
                         </div>
                     </div>
-
                     {{-- check boxes end  --}}
 
                     <div class="mb-3">

@@ -52,9 +52,13 @@
                                                   title="{{ $item->user->name }}">{{ 'by ' . $item->user->name }}
                                                 </span>
 
-                                            <span class="text-white text-truncate"
-                                                  style="font-size: 12px; max-width: 50%;">{{ '( ' . $item->category->name . ' )'}}
-                                            </span>
+                                             <span class="text-white text-truncate"
+                                                   style="font-size: 12px; max-width: 50%;">{{ $item->category !== null ? $item->category->name : 'Deleted'}}
+                                             </span>
+
+                                            {{-- <span class="text-white text-truncate" --}}
+                                            {{--       style="font-size: 12px; max-width: 50%;">{{$item->category !== null ? $item->category->name : 'Deleted'}} --}}
+                                            {{-- </span> --}}
                                             <span
                                                 class="text-white text-truncate text-end"
                                                 style="font-size: 12px; max-width: 50%;">{{date('d-M-Y', strtotime($item->created_at))}}
@@ -89,11 +93,13 @@
                                         <div class="row d-flex text-white">
                                             {{-- edit button --}}
                                             <a href="{{url('admin/edit-channel/'.$item->id)}}" class="col-2 text-white"><i
-                                                    class="fa-solid fa-pen"></i></a>
+                                                    class="fa-solid fa-pen"></i>
+                                            </a>
 
-                                            {{-- Delete button --}}
-                                            <a href="{{url('admin/delete-channel/'.$item->id)}}"
-                                               class="col-2 text-white"><i class="fa-solid fa-trash"></i></a>
+                                            <span type="button" class="text-white col-2" data-bs-toggle="modal"
+                                                  data-bs-target="#deleteChannel{{$item->id}}">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
                                             <div
                                                 class="form-check form-switch d-flex justify-content-end mx-auto col-8">
                                                 <input class="form-check-input " type="checkbox"
@@ -104,9 +110,36 @@
                                     </div>
                                 </div>
                             </div>
+
+                            {{-- delete data with confirmation --}}
+                            <!-- Channel Delete Modal -->
+                            <div class="modal fade" id="deleteChannel{{$item->id}}" tabindex="-1"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Delete Channel</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are You Want To Delete "{{$item->name}}" Channel
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <a href="{{url('admin/delete-channel/'.$item->id)}}"
+                                               class="btn btn-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
                         @endforeach
                     </div>
                     {{-- ============== channels by loop in card  End ============= --}}
+
 
                 </div>
             </div>

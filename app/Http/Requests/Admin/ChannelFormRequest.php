@@ -75,7 +75,7 @@ class ChannelFormRequest extends FormRequest
             ],
 
             'image' => [
-                'required',
+                'nullable',
                 'mimes:jpeg,jpg,png',
             ],
         ];

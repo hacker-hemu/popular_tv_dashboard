@@ -43,10 +43,19 @@
                                         {{-- edite and delete button icon --}}
                                         <div class="row d-flex text-white">
                                             {{-- edit button --}}
-                                            <a href="{{url('admin/edit-category/'.$item->id)}}" class="col-2 text-white"><i class="fa-solid fa-pen"></i></a>
+                                            <a href="{{url('admin/edit-category/'.$item->id)}}"
+                                               class="col-2 text-white"><i class="fa-solid fa-pen"></i>
+                                            </a>
 
                                             {{-- Delete button --}}
-                                            <a href="{{url('admin/delete-category/'.$item->id)}}" class="col-2 text-white"><i class="fa-solid fa-trash"></i></a>
+                                            <span type="button" class="text-white col-2" data-bs-toggle="modal"
+                                                  data-bs-target="#deleteCategory{{$item->id}}">
+                                                <i class="fa-solid fa-trash"></i>
+                                            </span>
+
+                                            {{-- <a href="{{url('admin/delete-category/'.$item->id)}}" --}}
+                                            {{--    class="col-2 text-white"><i class="fa-solid fa-trash"></i> --}}
+                                            {{-- </a> --}}
                                             <div
                                                 class="form-check form-switch mb-3 d-flex justify-content-end mx-auto col-8">
                                                 <input class="form-check-input " type="checkbox"
@@ -56,12 +65,36 @@
                                             <span class="text-white text-truncate  col-12"
                                                   style="font-size: 12px; max-width: 100%;"
                                                   title="{{ $item->description }}">{{ $item->description }}</span>
-
-
                                         </div>
                                     </div>
                                 </div>
                             </div>
+
+                            {{-- delete data with confirmation --}}
+                            <!-- Category Delete Modal -->
+                            <div class="modal fade" id="deleteCategory{{$item->id}}" tabindex="-1"
+                                 aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <button type="button" class="btn-close" data-bs-dismiss="modal"
+                                                    aria-label="Close"></button>
+                                        </div>
+                                        <div class="modal-body">
+                                            Are You Want To Delete {{$item->name}} Category
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">
+                                                Close
+                                            </button>
+                                            <a href="{{url('admin/delete-category/'.$item->id)}}" class="btn btn-danger">Delete</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
                         @endforeach
                     </div>
                 </div>
