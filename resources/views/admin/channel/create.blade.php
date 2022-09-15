@@ -25,7 +25,7 @@
 
                     {{-- ============== channel add form Start ============= --}}
 
-                <form action="" method="POST" enctype="multipart/form-data">
+                <form action="{{ url('admin/add-channel') }}" method="POST" enctype="multipart/form-data">
                     @csrf
 
                     <div class="mb-3">

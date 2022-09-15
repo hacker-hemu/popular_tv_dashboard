@@ -62,7 +62,31 @@ Route::prefix('admin')->middleware(['auth', 'isAdmin'])->group(function () {
 //     delete channel route
     Route::get('/delete-channel/{channel_id}', [App\Http\Controllers\Admin\ChannelController::class, 'destroy']);
 
-
 //     channels route end  //////////////////--------
+
+
+    //     users route start  ////////////////--------
+
+    //     index user route
+    Route::get('/users', [App\Http\Controllers\Admin\UserController::class, 'index']);
+
+    //     create user route
+    Route::get('/add-user', [App\Http\Controllers\Admin\UserController::class, 'create']);
+
+    //     store  user route
+    Route::post('/add-user', [App\Http\Controllers\Admin\UserController::class, 'store']);
+
+    //     edit user route
+    Route::get('/edit-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'edit']);
+
+    //     update user route
+    Route::put('/update-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'update']);
+
+    //     delete user route
+    Route::get('/delete-user/{user_id}', [App\Http\Controllers\Admin\UserController::class, 'destroy']);
+
+
+    //     users route end  //////////////////--------
+
 
 });

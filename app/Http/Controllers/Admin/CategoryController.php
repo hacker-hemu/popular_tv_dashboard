@@ -31,7 +31,7 @@ class CategoryController extends Controller
 //        store value in category table in database
         $data = $request;
 
-        $category = new Category;
+        $category = new Category();
         $category->name = $data['name'];
         $category->description = $data['description'];
         $category->status = $request->status == true ? '1' : '0';

@@ -92,8 +92,8 @@
                                         {{-- edite and delete button icon --}}
                                         <div class="row d-flex text-white">
                                             {{-- edit button --}}
-                                            <a href="{{url('admin/edit-channel/'.$item->id)}}" class="col-2 text-white"><i
-                                                    class="fa-solid fa-pen"></i>
+                                            <a href="{{url('admin/edit-channel/'.$item->id)}}" class="col-2 text-white">
+                                                <i class="fa-solid fa-pen"></i>
                                             </a>
 
                                             <span type="button" class="text-white col-2" data-bs-toggle="modal"
