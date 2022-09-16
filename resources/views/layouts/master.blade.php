@@ -8,6 +8,8 @@
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
+
+    <!-- google fonts link -->
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
 
     <!-- Styles (bootstrap file ) -->
@@ -19,32 +21,36 @@
     <!-- jQuery link  -->
     <script src="{{ asset('assets/js/jQuery.js') }}"></script>
 
+    <!-- Styles (custom file ) -->
+    <link href="{{ asset('assets/css/custom.css') }}" rel="stylesheet">
+
 </head>
-    <body>
+<body>
 
-    {{-- including nav bar  --}}
-    @include('layouts.includes.admin-navbar')
+{{-- including nav bar  --}}
+@include('layouts.includes.admin-navbar')
 
-    <div id="layoutSidenav">
-        {{-- including sidebar --}}
-        @include('layouts.includes.admin-sidebar')
+<div id="layoutSidenav">
+    {{-- including sidebar --}}
+    @include('layouts.includes.admin-sidebar')
 
-        <div id="layoutSidenav_content">
-            <main>
-                    @yield('content')
-            </main>
+    <div id="layoutSidenav_content">
+        <main>
+            @yield('content')
+        </main>
 
-            {{-- including footer --}}
-            @include('layouts.includes.admin-footer')
+        {{-- including footer --}}
+        @include('layouts.includes.admin-footer')
 
-        </div>
     </div>
+</div>
 
-    <!-- /////////////-----script files-----\\\\\\\\\\\\-->
-    <!-- bootstrap js file -->
-    <script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
+<!-- /////////////-----script files-----\\\\\\\\\\\\-->
+<!-- bootstrap js file -->
+<script src="{{ asset('assets/js/bootstrap.bundle.min.js') }}"></script>
 
-    <!-- main js file -->
-    <script src="{{ asset('assets/js/scripts.js') }}"></script>
-    </body>
+<!-- main js file -->
+<script src="{{ asset('assets/js/scripts.js') }}"></script>
+
+</body>
 </html>

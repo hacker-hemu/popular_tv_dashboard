@@ -37,7 +37,7 @@
                         @foreach($users as $user)
                             <tr>
                                 <th scope="row">{{$index++}}</th>
-                                <td>{{$user->name}}</td>
+                                    <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
                                 <td>{{$user->role_as == '1' ? 'Admin' : 'User'}}</td>
                                 <td class="">
@@ -81,6 +81,9 @@
                         @endforeach
                         </tbody>
                     </table>
+
+                    {{-- add pagination s --}}
+{{--                    {!! $users->links() !!}--}}
                 </div>
             </div>
 

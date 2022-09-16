@@ -10,49 +10,56 @@
                 <div class="sb-sidenav-menu-heading">Interface</div>
 
                 {{-- category section start  --}}
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategory"
+                <a class="nav-link {{ Request::is('admin/category') || Request::is('admin/add-category') ? ' collapse active' : 'collapsed'}}"
+                   href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategory"
                    aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Category
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseCategory" aria-labelledby="headingOne"
-                     data-bs-parent="#sidenavAccordion">
+                <div
+                    class="collapse {{ Request::is('admin/category') || Request::is('admin/add-category') ? 'show' : ''}} "
+                    id="collapseCategory" aria-labelledby="headingOne"
+                    data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ url('admin/add-category') }}">Add Category</a>
-                        <a class="nav-link" href="{{ url('admin/category') }}">View Category</a>
+                        <a class="nav-link {{ Request::is('admin/add-category') ? 'active' : ''}}"
+                           href="{{ url('admin/add-category') }}">Add Category</a>
+                        <a class="nav-link {{ Request::is('admin/category') ? 'active' : ''}}"
+                           href="{{ url('admin/category') }}">View Category</a>
                     </nav>
                 </div>
                 {{-- category section end  --}}
 
                 {{-- channels section start  --}}
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseChannels"
+                <a class="nav-link {{ Request::is('admin/channels') || Request::is('admin/add-channel') ? ' collapse active' : 'collapsed'}} "
+                   href="#" data-bs-toggle="collapse" data-bs-target="#collapseChannels"
                    aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Channels
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseChannels" aria-labelledby="headingOne"
+                <div class="collapse {{ Request::is('admin/channels') || Request::is('admin/add-channel') ? 'show' : ''}}" id="collapseChannels" aria-labelledby="headingOne"
                      data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ url('admin/add-channel') }}">Add Channel</a>
-                        <a class="nav-link" href="{{ url('admin/channels') }}">View Channels</a>
+                        <a class="nav-link {{ Request::is('admin/add-channel') ? 'active' : ''}}" href="{{ url('admin/add-channel') }}">Add Channel</a>
+                        <a class="nav-link {{ Request::is('admin/channels') ? 'active' : ''}}" href="{{ url('admin/channels') }}">View Channels</a>
                     </nav>
                 </div>
                 {{-- channels section end  --}}
 
                 {{-- users section start  --}}
-                <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers"
+                <a class="nav-link {{ Request::is('admin/users') || Request::is('admin/add-user') ? ' collapse active' : 'collapsed'}} "
+                   href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers"
                    aria-expanded="false" aria-controls="collapseLayouts">
                     <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
                     Users
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
-                <div class="collapse" id="collapseUsers" aria-labelledby="headingOne"
+                <div class="collapse {{ Request::is('admin/users') || Request::is('admin/add-user') ? 'show' : ''}} " id="collapseUsers" aria-labelledby="headingOne"
                      data-bs-parent="#sidenavAccordion">
                     <nav class="sb-sidenav-menu-nested nav">
-                        <a class="nav-link" href="{{ url('admin/add-user') }}">Add User</a>
-                        <a class="nav-link" href="{{ url('admin/users') }}">View Users</a>
+                        <a class="nav-link {{ Request::is('admin/add-user') ? 'active' : ''}}" href="{{ url('admin/add-user') }}">Add User</a>
+                        <a class="nav-link {{ Request::is('admin/users') ? 'active' : ''}}" href="{{ url('admin/users') }}">View Users</a>
                     </nav>
                 </div>
                 {{-- users section end  --}}

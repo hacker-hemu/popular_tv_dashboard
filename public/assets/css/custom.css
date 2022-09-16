@@ -1,0 +1,21 @@
+.pagination{
+    justify-content: center;
+}
+
+.pagination > .active > span {
+    background-color: black !important;
+    border-color: black !important;
+}
+.pagination > .disabled > span {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-color: black !important;
+}
+.pagination > .page-item > a {
+    background-color: rgba(0, 0, 0, 0.8) !important;
+    border-color: black !important;
+    color: white; !important;
+}
+.pagination >  span {
+    background-color: red !important;
+    border-color: green !important;
+}
