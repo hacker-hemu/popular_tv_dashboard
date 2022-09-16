@@ -22,7 +22,7 @@ class UserController extends Controller
         return view('admin.user.index', compact('users', 'index'));
     }
 
-//    create function for add users in database
+    //create function for add users in database
     public function create()
     {
         return view('admin.user.create');
@@ -55,21 +55,24 @@ class UserController extends Controller
     //store function for save data to database
     public function update(UserFormRequest $request, $user_id)
     {
-//        store value in users_table in database
+        //store value in users_table in database
         $data = $request;
 
         $user = User::find($user_id);
         $user->name = $data['name'];
         $user->email = $data['email'];
 
-        if($data['password'] == null || $data['password'] == ''){
-//            $user->password = $user->password;
+        //if password not change so not update password field
+        if ($data['password'] == null || $data['password'] == '') {
 
-        }else{
+            //nothing do
+
+        } else {
+            //change password field when user want to change
             $user->password = Hash::make($data['password']);
         }
 
-//        $user->password = Hash::make($data['password']);
+        //$user->password = Hash::make($data['password']);
         $user->role_as = $data['role_as'];
 
         $user->update();
@@ -78,12 +81,13 @@ class UserController extends Controller
     }
 
     //delete data from database
-    public function destroy($user_id){
+    public function destroy($user_id)
+    {
         $user = User::find($user_id);
-        if($user){
+        if ($user) {
             $user->delete();
             return redirect('admin/users')->with('message', 'User Deleted Successfully');
-        } else{
+        } else {
             return redirect('admin/users')->with('message', 'No User Found');
         }
     }

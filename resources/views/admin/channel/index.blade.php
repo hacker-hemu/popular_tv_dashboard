@@ -49,11 +49,11 @@
                                                 </span>
                                             <span class="text-white text-truncate  col-11 text-end mb-2"
                                                   style="font-size: 12px; max-width: 40%;"
-                                                  title="{{ $item->user->name }}">{{ 'by ' . $item->user->name }}
+                                                  title="{{ $item->user !== null ? $item->user->name : '' }}">{{ $item->user !== null ? 'by ' : ''}}{{ $item->user !== null ? $item->user->name : ''  }}
                                                 </span>
 
-                                             <span class="text-white text-truncate"
-                                                   style="font-size: 12px; max-width: 50%;">{{ $item->category !== null ? $item->category->name : 'Deleted'}}
+                                            <span class="text-white text-truncate"
+                                                  style="font-size: 12px; max-width: 50%;">{{ $item->category !== null ? $item->category->name : 'Deleted'}}
                                              </span>
 
                                             {{-- <span class="text-white text-truncate" --}}
