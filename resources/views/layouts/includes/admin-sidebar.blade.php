@@ -13,7 +13,7 @@
                 <a class="nav-link {{ Request::is('admin/category') || Request::is('admin/add-category') ? ' collapse active' : 'collapsed'}}"
                    href="#" data-bs-toggle="collapse" data-bs-target="#collapseCategory"
                    aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-list"></i></div>
                     Category
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -34,7 +34,7 @@
                 <a class="nav-link {{ Request::is('admin/channels') || Request::is('admin/add-channel') ? ' collapse active' : 'collapsed'}} "
                    href="#" data-bs-toggle="collapse" data-bs-target="#collapseChannels"
                    aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-layer-group"></i></div>
                     Channels
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
@@ -47,11 +47,28 @@
                 </div>
                 {{-- channels section end  --}}
 
+                {{-- Advertisement section start  --}}
+                <a class="nav-link {{ Request::is('admin/ad') || Request::is('admin/add-ad') ? ' collapse active' : 'collapsed'}} "
+                   href="#" data-bs-toggle="collapse" data-bs-target="#collapseAd"
+                   aria-expanded="false" aria-controls="collapseLayouts">
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-rectangle-ad"></i></div>
+                    Advertisement
+                    <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                </a>
+                <div class="collapse {{ Request::is('admin/ad') || Request::is('admin/add-ad') ? 'show' : ''}}" id="collapseAd" aria-labelledby="headingOne"
+                     data-bs-parent="#sidenavAccordion">
+                    <nav class="sb-sidenav-menu-nested nav">
+                        <a class="nav-link {{ Request::is('admin/add-ad') ? 'active' : ''}}" href="{{ url('admin/add-ad') }}">Add Advertisement</a>
+                        <a class="nav-link {{ Request::is('admin/ad') ? 'active' : ''}}" href="{{ url('admin/ad') }}">View Advertisement</a>
+                    </nav>
+                </div>
+                {{-- Advertisement section end  --}}
+
                 {{-- users section start  --}}
                 <a class="nav-link {{ Request::is('admin/users') || Request::is('admin/add-user') ? ' collapse active' : 'collapsed'}} "
                    href="#" data-bs-toggle="collapse" data-bs-target="#collapseUsers"
                    aria-expanded="false" aria-controls="collapseLayouts">
-                    <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                    <div class="sb-nav-link-icon"><i class="fa-solid fa-user-group"></i></div>
                     Users
                     <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                 </a>
