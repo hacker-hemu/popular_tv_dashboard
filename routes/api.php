@@ -22,7 +22,13 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
 
 //     dashboard category route
 Route::get('admin/channels', function () {
-    $channel = Channel::all();
-    return $channel;
+    $channels = Channel::with('category')->get();
+
+    foreach ($channels as $channel) {
+        $channel->image = env('CHANNEL_IMAGE') . '/' . $channel->image;
+        $channel->category->image = env('CATEGORY_IMAGE') . '/' . $channel->category->image;
+    }
+
+    return $channels;
 });
 

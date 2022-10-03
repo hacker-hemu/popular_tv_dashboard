@@ -21,5 +21,7 @@ class Category extends Model
     'created_by',
     ];
 
-
+    public function channel(){
+        return $this->hasMany(Channel::class);
+    }
 }
